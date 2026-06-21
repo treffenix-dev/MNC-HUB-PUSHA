@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23080808'/><text y='24' x='4' font-size='24'>🎭</text></svg>">
-<title>MNC HUB — Los Santos</title>
+<title>MNC-HUB-PUSHA</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -505,13 +505,14 @@ import { getAuth, signInAnonymously, onAuthStateChanged }
 // Gehe zu: console.firebase.google.com → Projekteinstellungen → Deine Apps → Web
 // Dann copy-paste deine firebaseConfig:
 const FB_CONFIG = {
-  apiKey:            "AIzaSyBDBXVpKSLCQWasScX9wvS7jZoIBNKvUvA",
-  authDomain:        "mnc-hub-rr.firebaseapp.com",
-  databaseURL:       "https://mnc-hub-rr-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId:         "mnc-hub-rr",
-  storageBucket:     "mnc-hub-rr.firebasestorage.app",
-  messagingSenderId: "134160037882",
-  appId:             "1:134160037882:web:5940264c467c59be27d643"
+  apiKey:            "AIzaSyDx_391jwIPHhqyeJwQJwnjm6kI0S1sFrM",
+  authDomain:        "mnc-hub-pusha.firebaseapp.com",
+  databaseURL:       "https://mnc-hub-pusha-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId:         "mnc-hub-pusha",
+  storageBucket:     "mnc-hub-pusha.firebasestorage.app",
+  messagingSenderId: "1009483739558",
+  appId:             "1:1009483739558:web:43119c85158ea672c39f67",
+  measurementId:     "G-QLCJSHLKB2"
 };
 // ─────────────────────────────────────────────────────────────────────
 
@@ -857,7 +858,7 @@ if(FB_CONFIGURED){
     <div class="ltxt">
       <div class="jp">ミッド ナイト クラブ</div>
       <div class="mn">MNC HUB</div>
-      <div class="sb">Retro Roleplay</div>
+      <div class="sb">MNC-HUB-PUSHA</div>
     </div>
   </a>
   <nav class="nav" aria-label="Hauptnavigation">
@@ -890,9 +891,9 @@ if(FB_CONFIGURED){
     <div class="sub">
       <span class="jp-part">ミッド ナイト クラブ</span>
       <span class="sep">·</span>
-      <span class="ls-part">Los Santos</span>
+      <span class="ls-part">MNC-HUB-PUSHA</span>
       <span class="sep">·</span>
-      <span class="rr-part">Retro Roleplay</span>
+      <span class="rr-part">PUSHA</span>
     </div>
   </div>
   <div class="home-divider"></div>
@@ -1285,7 +1286,7 @@ Sonstiges:'></textarea>
 (function(){const _fn=function(){};if(!window.console)window.console={log:_fn,info:_fn,warn:_fn,error:_fn};})();
 
 /* ════════════════════════════════════════════════════════════════════════════
-   MNC HUB — Los Santos  |  Komplett neu geschrieben  |  Firebase-First
+   MNC-HUB-PUSHA  |  Komplett neu geschrieben  |  Firebase-First
    Kein async bei Passwörtern · Pure-JS SHA-256 · Alle Browser identisch
    ════════════════════════════════════════════════════════════════════════════ */
 
@@ -2396,7 +2397,7 @@ function delMem(id){
   document.getElementById('cfov').classList.add('open');
 }
 function expText(){
-  let t='MID NIGHT CLUB — LOS SANTOS\nOFFIZIELLE MITGLIEDERLISTE\n'+'─'.repeat(40)+'\n\n';
+  let t='MNC-HUB-PUSHA\nOFFIZIELLE MITGLIEDERLISTE\n'+'─'.repeat(40)+'\n\n';
   mems.forEach((m,i)=>{t+=String(i+1).padStart(2,'0')+'  ➤  '+m.name+'  |  '+(m.rang||'—')+'  |  '+m.status+'\n';});
   t+='\n'+'─'.repeat(40)+'\nGESAMT: '+mems.length+' MITGLIEDER';
   navigator.clipboard.writeText(t).then(()=>toast('Liste kopiert ✓')).catch(()=>toast('Fehler','e'));
@@ -2960,7 +2961,7 @@ async function downloadBackupExcel(dateStr){
 
   // Titel-Zeilen
   wsData.push(['ミッド ナイト クラブ','','','','','','','']);
-  wsData.push(['MIDNIGHT CLUB — LOS SANTOS','','','','','','','']);
+  wsData.push(['MNC-HUB-PUSHA','','','','','','','']);
   wsData.push(['RESPEKT  ·  GESCHWINDIGKEIT  ·  EHRE','','','','','','','']);
   wsData.push([`OFFIZIELLE LACKIERUNGSLISTE  ·  Stand: ${dateStr}  ·  ${sorted.length} Fraktionen`,'','','','','','','']);
   // Header
@@ -3085,7 +3086,7 @@ function downloadBackupDocs(dateStr){
 <body>
 <div class="hdr">
   <div class="jp">ミッド ナイト クラブ</div>
-  <div class="title">MIDNIGHT CLUB — LOS SANTOS</div>
+  <div class="title">MNC-HUB-PUSHA</div>
   <div class="sub">RESPEKT &nbsp;·&nbsp; GESCHWINDIGKEIT &nbsp;·&nbsp; EHRE</div>
   <div class="sub" style="margin-top:4px">OFFIZIELLE LACKIERUNGSLISTE &nbsp;·&nbsp; Stand: ${dateStr} &nbsp;·&nbsp; ${sorted.length} Fraktionen</div>
 </div>
@@ -3098,7 +3099,7 @@ function downloadBackupDocs(dateStr){
   </tr></thead>
   <tbody>${rows}${emptyRows}</tbody>
 </table>
-<div class="ftr">MNC HUB &nbsp;·&nbsp; LOS SANTOS &nbsp;·&nbsp; RETRO ROLEPLAY &nbsp;·&nbsp; ${dateStr}</div>
+<div class="ftr">MNC-HUB-PUSHA &nbsp;·&nbsp; ${dateStr}</div>
 </body></html>`;
 
   const blob = new Blob([docHtml],{type:'text/html;charset=utf-8'});

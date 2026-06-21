@@ -517,6 +517,7 @@ const FB_CONFIG = {
 
 // Prüfen ob Config eingetragen wurde
 const FB_CONFIGURED = !FB_CONFIG.apiKey.includes('DEIN_');
+window._fbConfigured = FB_CONFIGURED;
 
 let app = null, db = null, auth = null;
 
@@ -1426,7 +1427,7 @@ async function fbPullAll(){
     fraks=fbF.map(f=>Object.assign({unterboden:'',reifenqualm:''},f));
     localStorage.setItem(FK,JSON.stringify(fraks));
   }else if(!fbF){
-    fraks=JSON.parse(JSON.stringify(PF));
+    fraks=[];
     await fbWrite(FB_PATH.fraks,fraks);
     localStorage.setItem(FK,JSON.stringify(fraks));
   }
@@ -1434,7 +1435,7 @@ async function fbPullAll(){
     mems=fbM;
     localStorage.setItem(MK,JSON.stringify(mems));
   }else if(!fbM){
-    mems=JSON.parse(JSON.stringify(PM));
+    mems=[];
     await fbWrite(FB_PATH.mems,mems);
     localStorage.setItem(MK,JSON.stringify(mems));
   }
@@ -2426,12 +2427,12 @@ function init(){
   // Lade Cache sofort — Firebase überschreibt sobald verbunden
   try{
     const cf=localStorage.getItem(FK);
-    fraks=cf?JSON.parse(cf).map(f=>Object.assign({unterboden:'',reifenqualm:''},f)):JSON.parse(JSON.stringify(PF));
-  }catch{fraks=JSON.parse(JSON.stringify(PF));}
+    fraks=cf?JSON.parse(cf).map(f=>Object.assign({unterboden:'',reifenqualm:''},f)):[];
+  }catch{fraks=[];}
   try{
     const cm=localStorage.getItem(MK);
-    mems=cm?JSON.parse(cm):JSON.parse(JSON.stringify(PM));
-  }catch{mems=JSON.parse(JSON.stringify(PM));}
+    mems=cm?JSON.parse(cm):[];
+  }catch{mems=[];}
   rfrak();rmem();hs();updateHomeStats();
   // Session aus localStorage wiederherstellen
   const _sv=JSON.parse(localStorage.getItem(SESS_KEY)||'{}');
@@ -3076,11 +3077,11 @@ function downloadBackupDocs(dateStr){
   body{background:#080808;margin:0;padding:16px;font-family:Arial,sans-serif;}
   .hdr{text-align:center;padding:12px 0 10px;border-bottom:2px solid #D4A843;margin-bottom:12px;}
   .jp{color:#D4A843;font-size:11pt;letter-spacing:5px;font-weight:bold;}
-  .title{color:#F0C96A;font-size:22pt;font-weight:bold;letter-spacing:4px;margin:4px 0;}
+  .title{color:#E05040;font-size:22pt;font-weight:bold;letter-spacing:4px;margin:4px 0;text-shadow:0 0 10px rgba(224,80,64,.28);}
   .sub{color:#787470;font-size:9pt;letter-spacing:2px;margin:2px 0;}
   table{width:100%;border-collapse:collapse;table-layout:fixed;}
   col.name{width:14%;}col.clr{width:10%;}col.hint{width:22%;}col.sm{width:8%;}
-  .ftr{text-align:center;margin-top:10px;color:#333;font-size:8pt;letter-spacing:2px;border-top:1px solid #2A2A2A;padding-top:8px;}
+  .ftr{text-align:center;margin-top:10px;color:#E05040;font-size:8pt;letter-spacing:2px;border-top:1px solid #2A2A2A;padding-top:8px;}
 </style></head>
 <body>
 <div class="hdr">
